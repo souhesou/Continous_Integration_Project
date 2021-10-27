@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: tn.esprit.spring.service.UserServiceImplTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.133 s <<< FAILURE! - in tn.esprit.spring.service.UserServiceImplTest
-testRetrieveAllUsers  Time elapsed: 0.022 s  <<< FAILURE!
-java.lang.AssertionError: expected:<15> but was:<1>
+Tests run: 5, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.077 s <<< FAILURE! - in tn.esprit.spring.service.UserServiceImplTest
+testRetrieveAllUsers  Time elapsed: 0.028 s  <<< FAILURE!
+java.lang.AssertionError: expected:<15> but was:<5>
 	at tn.esprit.spring.service.UserServiceImplTest.testRetrieveAllUsers(UserServiceImplTest.java:32)
 
-testDeleteUser  Time elapsed: 0.02 s  <<< ERROR!
+testDeleteUser  Time elapsed: 0.008 s  <<< ERROR!
 org.springframework.dao.EmptyResultDataAccessException: No class tn.esprit.spring.entities.User entity with id 3 exists!
 	at tn.esprit.spring.service.UserServiceImplTest.testDeleteUser(UserServiceImplTest.java:62)
 
