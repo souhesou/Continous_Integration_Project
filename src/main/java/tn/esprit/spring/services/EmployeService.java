@@ -60,13 +60,14 @@ public class EmployeService implements IEmployeService {
 	@Override
 	public Employe retrieveEmploye(String id) {
 		l.info("in  retrieveEmploye id = " + id);
-		Employe e =  ie.findById(Long.parseLong(id)).get(); 
+		Employe e =  ie.findById(Long.parseLong(id)).orElse(null);
 		l.info("employe returned : " + e);
 		return e; 
 	
 
 	}
 	
+
 	
 
 }

@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: tn.esprit.spring.service.EmployeServiceTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 16.637 s <<< FAILURE! - in tn.esprit.spring.service.EmployeServiceTest
+testRetrieveAllEmploye  Time elapsed: 0.874 s  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<2>
+	at tn.esprit.spring.service.EmployeServiceTest.testRetrieveAllEmploye(EmployeServiceTest.java:28)
+
+testDeleteEmploye  Time elapsed: 0.051 s  <<< ERROR!
+org.springframework.dao.EmptyResultDataAccessException: No class tn.esprit.spring.entities.Employe entity with id 2 exists!
+	at tn.esprit.spring.service.EmployeServiceTest.testDeleteEmploye(EmployeServiceTest.java:56)
+

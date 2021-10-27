@@ -70,6 +70,20 @@ public class Employe implements Serializable {
 	
 	
 		
+	
+	public Employe(long id, String prenom, String nom, String email, String password, Role role) {
+		super();
+		this.id = id;
+		this.prenom = prenom;
+		this.nom = nom;
+		this.email = email;
+		this.password = password;
+		this.role = role;
+	}
+
+
+
+
 	public Employe(String prenom, String nom, String email, String password, Role role) {
 		super();
 		this.prenom = prenom;
@@ -111,13 +125,20 @@ public class Employe implements Serializable {
 		this.role = role;
 	}
 	
+
+	
+
 	public long getId() {
 		return id;
 	}
 
+
+
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
 
 	public String getPrenom() {
 		return prenom;
