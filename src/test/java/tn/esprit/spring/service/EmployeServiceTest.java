@@ -24,7 +24,7 @@ public class EmployeServiceTest {
 	@Test
 	public void testRetrieveAllEmploye() {
 		List<Employe> listEmployes = es.retrieveAllEmploye();
-		Assert.assertEquals(3, listEmployes.size());
+		Assert.assertEquals(4, listEmployes.size());
 	}
 
 	@Test
@@ -38,7 +38,7 @@ public class EmployeServiceTest {
 	@Test
 	public void testModifyEmploye() throws ParseException   {
 		
-		Employe e = new Employe(9L,"Sousouuuu", "Saada", "souhei123.saada@esprit.tn", "123", Role.ADMINISTRATEUR);
+		Employe e = new Employe(11L,"Sousouuuu", "Saada", "souhei123.saada@esprit.tn", "123", Role.ADMINISTRATEUR);
 		Employe employeModified = es.updateEmploye(e) ;
 		Assert.assertEquals(e.getNom(), employeModified.getNom());
 	}
@@ -52,8 +52,8 @@ public class EmployeServiceTest {
 	
 	@Test
 	public void testDeleteEmploye() {
-		es.remove("9");
-		Assert.assertNull(es.retrieveEmploye("9"));
+		es.remove("11");
+		Assert.assertNull(es.retrieveEmploye("11"));
 		
 		
 	}
