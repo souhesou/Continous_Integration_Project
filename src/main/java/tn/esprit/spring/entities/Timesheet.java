@@ -21,12 +21,12 @@ public class Timesheet implements Serializable{
 	private Mission mission;
 	
 	//idEmploye est a la fois primary key et foreign key
-	
+	/*
 	@ManyToOne
     @JoinColumn(name = "idEmploye", referencedColumnName = "id", insertable=false, updatable=false)
 	private Employe employe;
 	
-	
+	*/
 	private boolean isValide;
 	
 
@@ -53,7 +53,7 @@ public class Timesheet implements Serializable{
 	public void setMission(Mission mission) {
 		this.mission = mission;
 	}
-
+/*
 	public Employe getEmploye() {
 		return employe;
 	}
@@ -61,7 +61,7 @@ public class Timesheet implements Serializable{
 	public void setEmploye(Employe employe) {
 		this.employe = employe;
 	}
-
+*/
 	
 	
 }

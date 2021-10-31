@@ -35,11 +35,11 @@ public class Contrat implements Serializable {
 	@Transient 
 	private float telephone;
 	
-	@JsonIgnore
+	/*@JsonIgnore
 	//@JsonBackReference
 	@OneToOne(mappedBy="contrat")
 	private Employe employe;
-
+*/
 	private float salaire;
 
 	public Contrat() {
@@ -84,14 +84,14 @@ public class Contrat implements Serializable {
 	public void setSalaire(float salaire) {
 		this.salaire = salaire;
 	}
-
+/*
 	public Employe getEmploye() {
 		return employe;
 	}
 
 	public void setEmploye(Employe employe) {
 		this.employe = employe;
-	}
+	}*/
 	
 	
 }
