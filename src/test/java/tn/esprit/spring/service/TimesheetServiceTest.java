@@ -32,7 +32,7 @@ public class TimesheetServiceTest {
 	@Test
 	public void testAddTimesheet() throws ParseException {
 		
-		Timesheet t = new Timesheet(62L, false,"wassel");
+		Timesheet t = new Timesheet(64L, false,"wassel");
 		Timesheet timesheetadded = ts.addTimesheet(t) ;
 		Assert.assertEquals(t.getName(), timesheetadded.getName());
 	}
@@ -41,7 +41,7 @@ public class TimesheetServiceTest {
 	@Test
 	public void testModifyTimesheet() throws ParseException   {
 		
-		Timesheet t = new Timesheet(62L, false,"wassel1");
+		Timesheet t = new Timesheet(64L, false,"wassel1");
 		Timesheet timesheetModified = ts.updateTimesheet(t) ;
 		Assert.assertEquals(t.getName(), timesheetModified.getName());
 	}
@@ -50,8 +50,8 @@ public class TimesheetServiceTest {
 	
 	@Test
 	public void testDeleteTimesheet() {
-		ts.remove("62");
-		Assert.assertNull(ts.retrieveTimesheet("62"));
+		ts.remove("64");
+		Assert.assertNull(ts.retrieveTimesheet("64"));
 		
 		
 	}
