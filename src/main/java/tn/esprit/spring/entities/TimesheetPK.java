@@ -12,10 +12,12 @@ public class TimesheetPK implements Serializable {
 
 	private static final long serialVersionUID = 5377539445871317492L;
 
-	private int idMission;
+	private long idMission;
 	
-	private int idEmploye;
+	private long idEmploye;
 	
+	private Employe em; 
+	private Mission m ;
 	//Choisir le TemporalType selon le besoin metier
 	@Temporal(TemporalType.DATE)
 	private Date dateDebut;
@@ -28,10 +30,22 @@ public class TimesheetPK implements Serializable {
 		super();
 	}
 	
-	public TimesheetPK(int idMission, int idEmploye, Date dateDebut, Date dateFin) {
+	public TimesheetPK(long idMission, long idEmploye, Date dateDebut, Date dateFin) {
 		super();
 		this.idMission = idMission;
 		this.idEmploye = idEmploye;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+	}
+
+	
+	
+	
+	
+	public TimesheetPK(Employe em, Mission m, Date dateDebut, Date dateFin) {
+		super();
+		this.em = em;
+		this.m = m;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 	}
@@ -46,9 +60,24 @@ public class TimesheetPK implements Serializable {
 		int result = 1;
 		result = prime * result + ((dateDebut == null) ? 0 : dateDebut.hashCode());
 		result = prime * result + ((dateFin == null) ? 0 : dateFin.hashCode());
-		result = prime * result + idEmploye;
-		result = prime * result + idMission;
+
 		return result;
+	}
+
+	public Employe getEm() {
+		return em;
+	}
+
+	public void setEm(Employe em) {
+		this.em = em;
+	}
+
+	public Mission getM() {
+		return m;
+	}
+
+	public void setM(Mission m) {
+		this.m = m;
 	}
 
 	@Override
@@ -77,15 +106,15 @@ public class TimesheetPK implements Serializable {
 		return true;
 	}
 
-	public void setIdMission(int idMission) {
+	public void setIdMission(long idMission) {
 		this.idMission = idMission;
 	}
 
-	public int getIdEmploye() {
+	public long getIdEmploye() {
 		return idEmploye;
 	}
 
-	public void setIdEmploye(int idEmploye) {
+	public void setIdEmploye(long idEmploye) {
 		this.idEmploye = idEmploye;
 	}
 
@@ -105,7 +134,7 @@ public class TimesheetPK implements Serializable {
 		this.dateFin = dateFin;
 	}
 
-	public int getIdMission() {
+	public long getIdMission() {
 		return idMission;
 	}
 
