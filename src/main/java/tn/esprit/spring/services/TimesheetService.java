@@ -15,7 +15,7 @@ import tn.esprit.spring.repository.TimesheetRepository;
 public class TimesheetService implements ITimesheetService  {
 
 	
-	private static final Logger l = LogManager.getLogger(EmployeService.class);
+	private static final Logger l = LogManager.getLogger(TimesheetService.class);
 
 	@Autowired
 	TimesheetRepository ti;
