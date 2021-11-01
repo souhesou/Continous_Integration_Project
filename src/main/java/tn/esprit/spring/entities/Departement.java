@@ -27,10 +27,10 @@ public class Departement implements Serializable {
 	
 	private String name;
 	
-//	//@JsonManagedReference 
-//	@JsonIgnore
-//	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-//	private List<Employe> employes;
+	//@JsonManagedReference 
+	@JsonIgnore
+	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private List<Employe> employes;
 	
 	@OneToMany(mappedBy="departement")
 	private List<Mission> missions;
@@ -62,13 +62,13 @@ public class Departement implements Serializable {
 		this.name = name;
 	}
 
-//	public List<Employe> getEmployes() {
-//		return employes;
-//	}
-//
-//	public void setEmployes(List<Employe> employes) {
-//		this.employes = employes;
-//	}
+	public List<Employe> getEmployes() {
+		return employes;
+	}
+
+	public void setEmployes(List<Employe> employes) {
+		this.employes = employes;
+	}
 
 	public List<Mission> getMissions() {
 		return missions;

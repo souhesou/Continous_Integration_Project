@@ -49,22 +49,21 @@ public class Employe implements Serializable {
 	@Enumerated(EnumType.STRING)
 	//@NotNull
 	private Role role;
-	/*
+	
 	//@JsonBackReference  
 	@JsonIgnore
 	@ManyToMany(mappedBy="employes" )
 	//@NotNull
 	private List<Departement> departements;
 	
-	@OneToOne
-	private Contrat contrat;
+	/*@OneToOne
+	private Contrat contrat;*/
 	
-	@JsonIgnore
+	/*@JsonIgnore
 	//@JsonBackReference
 	@OneToMany(mappedBy="employe")
-	private List<Timesheet> timesheets;
+	private List<Timesheet> timesheets;*/
 	
-	*/
 	public Employe() {
 		super();
 	}
@@ -194,7 +193,6 @@ public class Employe implements Serializable {
 		this.role = role;
 	}
 
-	/*
 	public List<Departement> getDepartements() {
 		return departements;
 	}
@@ -203,23 +201,23 @@ public class Employe implements Serializable {
 		this.departements = departement;
 	}
 
-	public Contrat getContrat() {
+	/*public Contrat getContrat() {
 		return contrat;
 	}
 
 	public void setContrat(Contrat contrat) {
 		this.contrat = contrat;
-	}
+	}*/
 
-	public List<Timesheet> getTimesheets() {
+	/*public List<Timesheet> getTimesheets() {
 		return timesheets;
 	}
 
 	public void setTimesheets(List<Timesheet> timesheets) {
 		this.timesheets = timesheets;
-	}
+	}*/
 
-*/
+
 	@Override
 	public String toString() {
 		return "Employe [id=" + id + ", prenom=" + prenom + ", nom=" + nom + ", email=" + email + ", password="

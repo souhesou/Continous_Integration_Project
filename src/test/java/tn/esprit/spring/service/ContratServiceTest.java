@@ -1,24 +1,23 @@
 package tn.esprit.spring.service;
 
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.esprit.spring.entities.Contrat;
-import tn.esprit.spring.entities.Employe;
-import tn.esprit.spring.entities.Role;
 import tn.esprit.spring.services.ContratService;
 
+@TestMethodOrder(OrderAnnotation.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ContratServiceTest {
@@ -28,6 +27,7 @@ public class ContratServiceTest {
 	
 	
 	@Test
+	@Order(1)
 	public void testAddContrat() throws ParseException {
 		
 		
@@ -41,6 +41,7 @@ public class ContratServiceTest {
 	}
 	
 	@Test
+	@Order(3)
 	public void testRetrieveAllContrat() {
 		List<Contrat> listcontrats = ser.retrieveAllContrat();
 		// if there are 4 users in DB : 
@@ -48,18 +49,20 @@ public class ContratServiceTest {
 	}
 	
 	@Test
+	@Order(2)
 	public void testModifyContrat() throws ParseException   {
 		java.util.Date date=new java.util.Date();
 		java.sql.Date sqlDate=new java.sql.Date(date.getTime());
-		Contrat con = new Contrat(7,sqlDate ,"test",13);
+		Contrat con = new Contrat(32,sqlDate ,"test",14);
 		Contrat contratModified = ser.updateContrat(con);
 		Assert.assertEquals(con.getTypeContrat(), contratModified.getTypeContrat());
 	}
 	
 	@Test
+	@AfterAll
 	public void testDeleteContrat() {
-		ser.remove("7");
-		Assert.assertNull(ser.retrieveContrat("7"));
+		ser.remove("32");
+		Assert.assertNull(ser.retrieveContrat("32"));
 		
 		
 	}
