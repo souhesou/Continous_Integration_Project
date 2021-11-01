@@ -49,7 +49,7 @@ public class Employe implements Serializable {
 	@Enumerated(EnumType.STRING)
 	//@NotNull
 	private Role role;
-	/*
+	
 	//@JsonBackReference  
 	@JsonIgnore
 	@ManyToMany(mappedBy="employes" )
@@ -64,7 +64,7 @@ public class Employe implements Serializable {
 	@OneToMany(mappedBy="employe")
 	private List<Timesheet> timesheets;
 	
-	*/
+	
 	public Employe() {
 		super();
 	}
@@ -194,7 +194,7 @@ public class Employe implements Serializable {
 		this.role = role;
 	}
 
-	/*
+	
 	public List<Departement> getDepartements() {
 		return departements;
 	}
@@ -219,7 +219,7 @@ public class Employe implements Serializable {
 		this.timesheets = timesheets;
 	}
 
-*/
+
 	@Override
 	public String toString() {
 		return "Employe [id=" + id + ", prenom=" + prenom + ", nom=" + nom + ", email=" + email + ", password="
