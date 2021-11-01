@@ -26,13 +26,13 @@ public class TimesheetServiceTest {
 	public void testRetrieveAllTimesheet() {
 		List<Timesheet> listTimesheets = ts.retrieveAllTimesheet();
 		// if there are 7 users in DB : 
-		Assert.assertEquals(3, listTimesheets.size());
+		Assert.assertEquals(5, listTimesheets.size());
 	}
 
 	@Test
 	public void testAddTimesheet() throws ParseException {
 		
-		Timesheet t = new Timesheet(38L, false,"wassel");
+		Timesheet t = new Timesheet(62L, false,"wassel");
 		Timesheet timesheetadded = ts.addTimesheet(t) ;
 		Assert.assertEquals(t.getName(), timesheetadded.getName());
 	}
@@ -41,7 +41,7 @@ public class TimesheetServiceTest {
 	@Test
 	public void testModifyTimesheet() throws ParseException   {
 		
-		Timesheet t = new Timesheet(38L, false,"wassel1");
+		Timesheet t = new Timesheet(62L, false,"wassel1");
 		Timesheet timesheetModified = ts.updateTimesheet(t) ;
 		Assert.assertEquals(t.getName(), timesheetModified.getName());
 	}
@@ -50,8 +50,8 @@ public class TimesheetServiceTest {
 	
 	@Test
 	public void testDeleteTimesheet() {
-		ts.remove("38");
-		Assert.assertNull(ts.retrieveTimesheet("38"));
+		ts.remove("62");
+		Assert.assertNull(ts.retrieveTimesheet("62"));
 		
 		
 	}
