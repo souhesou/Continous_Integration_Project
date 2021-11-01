@@ -38,8 +38,8 @@ public class Contrat implements Serializable {
 	/*@JsonIgnore
 	//@JsonBackReference
 	@OneToOne(mappedBy="contrat")
-	private Employe employe;
-*/
+	private Employe employe;*/
+
 	private float salaire;
 
 	public Contrat() {
@@ -47,6 +47,13 @@ public class Contrat implements Serializable {
 	}
 	
 	public Contrat(Date dateDebut, String typeContrat, float salaire) {
+		this.dateDebut = dateDebut;
+		this.typeContrat = typeContrat;
+		this.salaire = salaire;
+	}
+	
+	public Contrat(int id , Date dateDebut, String typeContrat, float salaire) {
+		this.reference = id ; 
 		this.dateDebut = dateDebut;
 		this.typeContrat = typeContrat;
 		this.salaire = salaire;
@@ -84,8 +91,8 @@ public class Contrat implements Serializable {
 	public void setSalaire(float salaire) {
 		this.salaire = salaire;
 	}
-/*
-	public Employe getEmploye() {
+
+	/*public Employe getEmploye() {
 		return employe;
 	}
 
