@@ -9,7 +9,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 import org.junit.Assert;
 import tn.esprit.spring.entities.Departement;
-import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.services.IDepartementService;
 import java.text.ParseException;
 
@@ -23,15 +22,15 @@ public class DepartementServiceTest {
 	@Test
 	public void testModifyDepartement() throws ParseException   {
 		
-		Departement d = new Departement(18,"change",null);
+		Departement d = new Departement(20,"change",null);
 		Departement departementModified = ds.updateDepartement(d) ;
 		Assert.assertEquals(d.getName(), departementModified.getName());
 	}
 
 	@Test
 	public void testDeleteDepartement() {
-		ds.remove("17");
-		Assert.assertNull(ds.retrieveDepartement("17"));
+		ds.remove("19");
+		Assert.assertNull(ds.retrieveDepartement("19"));
 		
 		
 	}
@@ -52,8 +51,8 @@ public class DepartementServiceTest {
 	}
 	@Test
 	public void testRetrieveDepartement() {
-		Departement d = ds.retrieveDepartement("18");
-		Assert.assertEquals(18, d.getId());
+		Departement d = ds.retrieveDepartement("20");
+		Assert.assertEquals(20, d.getId());
 		}
 	
 	
