@@ -21,6 +21,22 @@ public class DepartementServiceTest {
 	IDepartementService ds ;
 	
 	@Test
+	public void testModifyDepartement() throws ParseException   {
+		
+		Departement d = new Departement(18,"change",null);
+		Departement departementModified = ds.updateDepartement(d) ;
+		Assert.assertEquals(d.getName(), departementModified.getName());
+	}
+
+	@Test
+	public void testDeleteDepartement() {
+		ds.remove("17");
+		Assert.assertNull(ds.retrieveDepartement("17"));
+		
+		
+	}
+
+	@Test
 	public void testRetrieveAllEmploye() {
 		List<Departement> listDepartements = ds.retrieveAllDepartements();
 		Assert.assertEquals(1, listDepartements.size());
@@ -35,27 +51,10 @@ public class DepartementServiceTest {
 		Assert.assertEquals(d.getName(), departementadded.getName());
 	}
 	@Test
-	public void testModifyDepartement() throws ParseException   {
-		
-		Departement d = new Departement(12,"change",null);
-		Departement departementModified = ds.updateDepartement(d) ;
-		Assert.assertEquals(d.getName(), departementModified.getName());
-	}
-	
-	@Test
 	public void testRetrieveDepartement() {
-		Departement d = ds.retrieveDepartement("12");
-		Assert.assertEquals(12, d.getId());
+		Departement d = ds.retrieveDepartement("18");
+		Assert.assertEquals(18, d.getId());
 		}
-	
-	
-	@Test
-	public void testDeleteDepartement() {
-		ds.remove("11");
-		Assert.assertNull(ds.retrieveDepartement("11"));
-		
-		
-	}
 	
 	
 	
