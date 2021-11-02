@@ -22,15 +22,15 @@ public class DepartementServiceTest {
 	@Test
 	public void testModifyDepartement() throws ParseException   {
 		
-		Departement d = new Departement(20,"change",null);
+		Departement d = new Departement(25,"change",null);
 		Departement departementModified = ds.updateDepartement(d) ;
 		Assert.assertEquals(d.getName(), departementModified.getName());
 	}
 
 	@Test
 	public void testDeleteDepartement() {
-		ds.remove("19");
-		Assert.assertNull(ds.retrieveDepartement("19"));
+		ds.remove("24");
+		Assert.assertNull(ds.retrieveDepartement("24"));
 		
 		
 	}
@@ -51,8 +51,8 @@ public class DepartementServiceTest {
 	}
 	@Test
 	public void testRetrieveDepartement() {
-		Departement d = ds.retrieveDepartement("20");
-		Assert.assertEquals(20, d.getId());
+		Departement d = ds.retrieveDepartement("25");
+		Assert.assertEquals(25, d.getId());
 		}
 	
 	
