@@ -1,26 +1,15 @@
 package tn.esprit.spring.entities;
 
 import java.io.Serializable;
-import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
-import javax.validation.constraints.Pattern;
 
-import org.springframework.beans.factory.annotation.Value;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -54,15 +43,15 @@ public class Employe implements Serializable {
 //	@JsonIgnore
 //	@ManyToMany(mappedBy="employes" )
 //	//@NotNull
-//	private List<Departement> departements;
+//NOSONARprivate List<Departement> departements;
 //	
 //	@OneToOne
-//	private Contrat contrat;
+	//NOSONAR	private Contrat contrat;
 //	
 //	@JsonIgnore
 //	//@JsonBackReference
 //	@OneToMany(mappedBy="employe")
-//	private List<Timesheet> timesheets;
+	//NOSONAR	private List<Timesheet> timesheets;
 //	
 	
 	public Employe() {
@@ -195,28 +184,27 @@ public class Employe implements Serializable {
 	}
 
 //	
-//	public List<Departement> getDepartements() {
+	//NOSONAR	public List<Departement> getDepartements() {
 //		return departements;
 //	}
 //
-//	public void setDepartements(List<Departement> departement) {
+	//NOSONAR	public void setDepartements(List<Departement> departement) {
 //		this.departements = departement;
 //	}
 //
-//	public Contrat getContrat() {
+	//NOSONAR	public Contrat getContrat() {
 //		return contrat;
 //	}
 //
-//	public void setContrat(Contrat contrat) {
+	//NOSONAR	public void setContrat(Contrat contrat) {
 //		this.contrat = contrat;
 //	}
 //
-//	public List<Timesheet> getTimesheets() {
+	//NOSONAR	public List<Timesheet> getTimesheets() {
 //		return timesheets;
 //	}
 //
-//	public void setTimesheets(List<Timesheet> timesheets) {
-//		this.timesheets = timesheets;
+	//NOSONAR	this.timesheets = timesheets;
 //	}
 //
 

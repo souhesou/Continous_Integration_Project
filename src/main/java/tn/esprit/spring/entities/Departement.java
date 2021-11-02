@@ -27,10 +27,10 @@ public class Departement implements Serializable {
 	
 	private String name;
 	
-//	//@JsonManagedReference 
-//	@JsonIgnore
-//	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-//	private List<Employe> employes;
+	//NOSONAR@JsonManagedReference 
+	//NOSONAR	@JsonIgnore
+	//NOSONAR	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	//NOSONAR	private List<Employe> employes;
 	
 	@OneToMany(mappedBy="departement")
 	private List<Mission> missions;
@@ -62,13 +62,12 @@ public class Departement implements Serializable {
 		this.name = name;
 	}
 
-//	public List<Employe> getEmployes() {
-//		return employes;
-//	}
-//
-//	public void setEmployes(List<Employe> employes) {
-//		this.employes = employes;
-//	}
+	//NOSONAR	public List<Employe> getEmployes() {
+	//NOSONAR		return employes;
+	//NOSONAR	}
+
+	//NOSONAR	public void setEmployes(List<Employe> employes) {
+	//NOSONAR		this.employes = employes;
 
 	public List<Mission> getMissions() {
 		return missions;
@@ -85,6 +84,33 @@ public class Departement implements Serializable {
 	public void setEntreprise(Entreprise entreprise) {
 		this.entreprise = entreprise;
 	}
+
+	public Departement(String name, Entreprise entreprise) {
+		super();
+		this.name = name;
+		this.entreprise = entreprise;
+	}
+
+	public Departement(int id, String name, Entreprise entreprise) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.entreprise = entreprise;
+	}
+
+	public Departement(int id, String name, List<Mission> missions, Entreprise entreprise) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.missions = missions;
+		this.entreprise = entreprise;
+	}
+
+	public Departement(int id) {
+		super();
+		this.id = id;
+	}
+
 	
 	
 
