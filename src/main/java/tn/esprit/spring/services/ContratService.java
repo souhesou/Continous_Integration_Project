@@ -1,6 +1,7 @@
 package tn.esprit.spring.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -62,6 +63,9 @@ public class ContratService {
 	
 	public void remove(String idContrat)
 	{
-		ie.deleteById(Integer.parseInt(idContrat));
+		if ( ! ie.findById(Integer.parseInt(idContrat)).equals(Optional.empty()) ){
+			ie.deleteById(Integer.parseInt(idContrat));
+		}
+		
 	}
 }
