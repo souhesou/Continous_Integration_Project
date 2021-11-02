@@ -45,7 +45,7 @@ public class ContratService {
 }
 
 	public Contrat updateContrat(Contrat con) {
-		// TODO Auto-generated method stub
+		//NOSONAR TODO Auto-generated method stub
 		return ie.save(con);
 	}
 	

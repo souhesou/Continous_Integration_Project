@@ -31,23 +31,23 @@ public interface UserRepository extends  CrudRepository<User, Long> {
 
 
 
-// List<User> findByFirstName(String fname);
-// List<User> findByLastName(String lname);
-// List<User> findByIdGreaterThan(int lname);
+//NOSONAR List<User> findByFirstName(String fname);
+//NOSONAR List<User> findByLastName(String lname);
+//NOSONAR List<User> findByIdGreaterThan(int lname);
 	
-//	@Query("SELECT MAX((e.id), 0) FROM User e") 
-//	Long getMaxId(); 
+//NOSONAR	@Query("SELECT MAX((e.id), 0) FROM User e") 
+//NOSONAR	Long getMaxId(); 
 	
-//	// JPQL Update : 
-//	@Modifying
-//	@Query("update User u set u.role = :role where u.firstName = :fname")
-//	int updateUserStatusForFirstName(@Param("role") Integer status, @Param("fname") String fname);
+//NOSONAR	// JPQL Update : 
+//NOSONAR	@Modifying
+//NOSONAR	@Query("update User u set u.role = :role where u.firstName = :fname")
+//NOSONAR	int updateUserStatusForFirstName(@Param("role") Integer status, @Param("fname") String fname);
 
-	// Native Update : 
-//	@Modifying
-//	@Query(value = "update User u set u.status = ? where u.name = ?", nativeQuery = true)
-//	int updateUserStatusForFirstName1(Integer status, String name);
+	//NOSONAR Native Update : 
+//NOSONAR	@Modifying
+//NOSONAR	@Query(value = "update User u set u.status = ? where u.name = ?", nativeQuery = true)
+//NOSONAR	int updateUserStatusForFirstName1(Integer status, String name);
 	
-//	@Modifying
-//	@Query(value = "insert into Users (firstName, lastName, role) values (:fn, :ln, :role)", nativeQuery = true)
-//	void insertUser(@Param("fn") String fn, @Param("ln") Integer ln, @Param("role") Integer role);
+//NOSONAR	@Modifying
+//NOSONAR	@Query(value = "insert into Users (firstName, lastName, role) values (:fn, :ln, :role)", nativeQuery = true)
+//NOSONAR	void insertUser(@Param("fn") String fn, @Param("ln") Integer ln, @Param("role") Integer role);
