@@ -2,6 +2,8 @@ package tn.esprit.spring.service;
 
 
 import java.text.ParseException;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.AfterAll;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -29,6 +31,7 @@ public class EntrepriseServiceTest {
 	IEntrepriseService es ;
 	
 	@Test
+	@Order(3)
 	public void testRetrieveAllEntreprise() {
 		List<Entreprise> listEntreprise = es.retrieveAllEntreprise();
 		// if there are 7 users in DB : 
@@ -36,6 +39,7 @@ public class EntrepriseServiceTest {
 	}
 		
 	@Test
+	@Order(1)
 	public void testAddEntreprise() throws ParseException {
 		
 		Entreprise e = new Entreprise("bourguiga", "don");
@@ -46,8 +50,9 @@ public class EntrepriseServiceTest {
 
 
 	@Test
+	@Order(2)
 	public void testModifyEntreprise() throws ParseException   {
-		Entreprise u = new Entreprise("bourguiga1","don1"); 
+		Entreprise u = new Entreprise(32,"bourguiga1","don1"); 
 		Entreprise entrepriseUpdated  = es.updateEntreprise(u); 
 		Assert.assertEquals(u.getName(), entrepriseUpdated.getName());
 	}
@@ -57,12 +62,14 @@ public class EntrepriseServiceTest {
 
 	
 	@Test
+	@AfterAll
 	public void testDeleteEntreprise() {
-		es.remove("2");
-		Assert.assertNull(es.retrieveEntreprise("2"));
+		es.remove("37");
+		Assert.assertNull(es.retrieveEntreprise("33"));
 	}
 	
 		@Test
+		@Order(4)
 	public void testRetrieveEntreprise() {
 		Entreprise entrepriseRetrieved = es.retrieveEntreprise("20"); 
 		// Assert.assertEquals(entrepriseRetrieved.getId());
