@@ -52,7 +52,7 @@ public class EntrepriseServiceTest {
 	@Test
 	@Order(2)
 	public void testModifyEntreprise() throws ParseException   {
-		Entreprise u = new Entreprise(56,"bourguiga1","don1"); 
+		Entreprise u = new Entreprise(65,"bourguiga1","don1"); 
 		Entreprise entrepriseUpdated  = es.updateEntreprise(u); 
 		Assert.assertEquals(u.getName(), entrepriseUpdated.getName());
 	}
@@ -64,8 +64,8 @@ public class EntrepriseServiceTest {
 	@Test
 	@AfterAll
 	public void testDeleteEntreprise() {
-		es.remove("56");
-		Assert.assertNull(es.retrieveEntreprise("56"));
+		es.remove("65");
+		Assert.assertNull(es.retrieveEntreprise("65"));
 	}
 	
 		@Test
