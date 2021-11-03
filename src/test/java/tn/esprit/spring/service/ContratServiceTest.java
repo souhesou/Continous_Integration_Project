@@ -53,7 +53,7 @@ public class ContratServiceTest {
 	public void testModifyContrat() throws ParseException   {
 		java.util.Date date=new java.util.Date();
 		java.sql.Date sqlDate=new java.sql.Date(date.getTime());
-		Contrat con = new Contrat(51,sqlDate ,"test",15);
+		Contrat con = new Contrat(52,sqlDate ,"test",15);
 		Contrat contratModified = ser.updateContrat(con);
 		Assert.assertEquals(con.getTypeContrat(), contratModified.getTypeContrat());
 	}
@@ -61,8 +61,8 @@ public class ContratServiceTest {
 	@Test
 	@AfterAll
 	public void testDeleteContrat() {
-		ser.remove("50");
-		Assert.assertNull(ser.retrieveContrat("50"));
+		ser.remove("51");
+		Assert.assertNull(ser.retrieveContrat("51"));
 		
 		
 	}
