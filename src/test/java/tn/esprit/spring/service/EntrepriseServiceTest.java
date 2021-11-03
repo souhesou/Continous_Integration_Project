@@ -64,8 +64,8 @@ public class EntrepriseServiceTest {
 	@Test
 	@AfterAll
 	public void testDeleteEntreprise() {
-		es.remove("38");
-		Assert.assertNull(es.retrieveEntreprise("38"));
+		es.remove("46");
+		Assert.assertNull(es.retrieveEntreprise("46"));
 	}
 	
 		@Test
