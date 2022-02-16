@@ -23,10 +23,10 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Compile
-      run: mvn -B compile --file timesheet-ci/pom.xml
+      run: mvn -B compile --file ./pom.xml
 
     - name: Build a package
-      run: mvn -B package --file timesheet-ci/pom.xml
+      run: mvn -B package --file ./pom.xml
 
     - name: Temporarily save jar artifact
       uses: actions/upload-artifact@v2
