@@ -43,8 +43,8 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/download-artifact@v1
       with:
-          name: timesheet-ci
-          path: target/
+          name: jar-artifact
+          path: ${{ github.workspace }}/timesheet-ci/target/
     - name: Docker build
       run: |
         docker build . -t souhe14/souhe14-maven:${{needs.build.outputs.jar_version}}
