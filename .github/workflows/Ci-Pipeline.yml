@@ -32,7 +32,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: jar-artifact
-        path: ${{ github.workspace }}/timesheet-ci/target/*.jar
+        path: ${{ github.workspace }}/target/*.jar
         retention-days: 1
 
   deploy:
@@ -44,7 +44,7 @@ jobs:
     - uses: actions/download-artifact@v1
       with:
           name: jar-artifact
-          path: ${{ github.workspace }}/timesheet-ci/target/
+          path: ${{ github.workspace }}/target/
     - name: Docker build
       run: |
         docker build . -t souhe14/souhe14-maven:${{needs.build.outputs.jar_version}}
