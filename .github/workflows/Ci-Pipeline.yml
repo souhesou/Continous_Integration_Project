@@ -56,7 +56,7 @@ jobs:
 
     - name: Docker push
       run: |
-        docker push souhe:${{needs.build.outputs.jar_version}}
+        docker push souhe:2.0
   run:
     runs-on: ubuntu-18.04
     needs: [build, deploy]
@@ -64,4 +64,4 @@ jobs:
     steps:
     - name: Run container
       run: |
-        docker run souhe:${{needs.build.outputs.jar_version}}
+        docker run souhe:2.0
