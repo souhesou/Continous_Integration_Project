@@ -64,4 +64,4 @@ jobs:
     steps:
     - name: Run container
       run: |
-        docker run souhe:2.0
+        docker run ${{ secrets.DOCKER_USERNAME }}/souhe:2.0
