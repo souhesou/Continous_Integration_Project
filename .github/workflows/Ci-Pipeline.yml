@@ -25,6 +25,7 @@ jobs:
     - name: Compile
       run: mvn -B compile --file ./pom.xml
 
+
     - name: Build a package
       run: mvn -B package -DskipTests --file ./pom.xml
 
