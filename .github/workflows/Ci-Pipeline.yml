@@ -47,7 +47,7 @@ jobs:
           path: ${{ github.workspace }}/target/
     - name: Docker build
       run: |
-        docker build . -t timesheet-ci-maven:${{needs.build.outputs.jar_version}}
+        docker build . -t timesheet:${{needs.build.outputs.jar_version}}
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
